@@ -20,7 +20,7 @@ n/a
 Users can use mongodb to test out `post` and `get` methos
 
 ![demo](public/icons/budge_tracker.png)
-### click here to check out deployed app (https://dashboard.heroku.com/apps/desolate-scrubland-77283)
+### click here to check out deployed app (https://desolate-scrubland-77283.herokuapp.com)
 
 ## Contributing
 you may fork this application by the following steps
