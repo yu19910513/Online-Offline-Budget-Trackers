@@ -1,6 +1,5 @@
 let transactions = [];
 let myChart;
-// const fetch = require("node-fetch");
 
 fetch("/api/transaction")
   .then(response => {
@@ -113,7 +112,7 @@ function sendTransaction(isAdding) {
   populateTable();
   populateTotal();
 
-  // also send to server
+  // send to server
   fetch("/api/transaction", {
     method: "POST",
     body: JSON.stringify(transaction),
