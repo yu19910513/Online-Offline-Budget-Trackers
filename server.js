@@ -17,7 +17,7 @@ app.use(express.static("public"));
 
 
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb+srv://yu19910513:Lin19920918@cluster0.hhwzd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+  process.env.MONGODB_URI || 'mongodb://localhost/3000',
   {
     useNewUrlParser: true,
     useFindAndModify: false
