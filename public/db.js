@@ -3,7 +3,6 @@ const request = indexedDB.open('OfflineDB', 11);
 
 request.onupgradeneeded = function (e) {
   db = e.target.result;
-
   if (db.objectStoreNames.length === 0) {
     db.createObjectStore('OfflineStore', { autoIncrement: true });
   }
@@ -18,11 +17,9 @@ function checkDatabase() {
   let transaction = db.transaction(['OfflineStore'], 'readwrite');
   const store = transaction.objectStore('OfflineStore');
   const getAll = store.getAll();
-
-
   getAll.onsuccess = function () {
     console.log("it works");
-    if (getAll.result.length > 0) {
+    if (getAll.result.length !== 0) {
       fetch('/api/transaction/bulk', {
         method: 'POST',
         body: JSON.stringify(getAll.result),
