@@ -17,7 +17,7 @@ app.use(express.static("public"));
 
 
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/myFirstDatabase',
+  process.env.MONGODB_URI || 'mongodb://localhost/Transaction',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
