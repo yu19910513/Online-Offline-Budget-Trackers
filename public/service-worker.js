@@ -4,7 +4,10 @@ const FILES_TO_CACHE = [
     "/index.js",
     "/manifest.webmanifest",
     "/styles.css",
-    "/db.js"
+    "/db.js",
+    "/icons/icon-144x144.png",
+    "/icons/icon-192x192.png",
+    "/icons/icon-512x512.png",
   ];
 
 
@@ -65,9 +68,16 @@ self.addEventListener("fetch", function (evt) {
     return;
   }
 
-    evt.respondWith(
-    caches.match(evt.request).then(function (response) {
-      return response || fetch(evt.request);
+  evt.respondWith(
+    fetch(evt.request).catch(function () {
+      return caches.match(evt.request).then(function (response) {
+        if (response) {
+          return response;
+        } else if (evt.request.headers.get("accept").includes("text/html")) {
+          // return the cached home page for all requests for html pages
+          return caches.match("/");
+        }
+      });
     })
   );
 });
