@@ -1,4 +1,4 @@
-# Workout-Tracker
+# Online-Offline-Budget-Trackers
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ## Description
 the application is to allow user to track the budget at any time regardless the internet connection. IndexedDB and catche work toegther to keep the UI operational while offline, and be able to update the backend as soon as the reconnection.
@@ -20,7 +20,7 @@ n/a
 Users can use mongodb to test out `post` and `get` methos
 
 ![demo](public/icons/budge_tracker.png)
-### click here to check out deployed app (https://blooming-waters-71639.herokuapp.com)
+### click here to check out deployed app (https://dashboard.heroku.com/apps/desolate-scrubland-77283)
 
 ## Contributing
 you may fork this application by the following steps
